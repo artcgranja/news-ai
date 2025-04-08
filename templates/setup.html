@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Setup - News AI Assistant{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="fas fa-cog me-2"></i>Setup</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Welcome to News AI Assistant!</strong> To get started, you need to provide your OpenAI API key.
+                </div>
+                
+                <form method="POST" action="{{ url_for('main.setup') }}">
+                    {{ form.csrf_token }}
+                    <div class="mb-3">
+                        <label for="api_key" class="form-label">OpenAI API Key</label>
+                        {{ form.api_key(class="form-control", placeholder="sk-...") }}
+                        <div class="form-text">
+                            <i class="fas fa-key me-1"></i>
+                            Your API key will be stored securely in a .env file and will not be shared.
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        {{ form.submit(class="btn btn-primary") }}
+                    </div>
+                </form>
+                
+                <div class="mt-4">
+                    <h5>How to get an OpenAI API key:</h5>
+                    <ol>
+                        <li>Go to <a href="https://platform.openai.com/" target="_blank" rel="noopener">OpenAI Platform</a></li>
+                        <li>Sign up or log in to your account</li>
+                        <li>Navigate to API Keys section</li>
+                        <li>Create a new API key</li>
+                        <li>Copy the key and paste it here</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

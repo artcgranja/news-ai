@@ -1,35 +1,38 @@
 # News AI Assistant
 
-An interactive AI-powered news assistant that helps you stay informed about the latest developments in artificial intelligence and technology. This project uses OpenAI's GPT-4 to provide personalized news updates and insights.
+A Flask-based web application that uses OpenAI's GPT-4 to provide AI and technology news summaries and answer questions about the latest developments in the field.
 
 ## Features
 
-- 🤖 AI-powered news search and summarization
-- 🔍 Real-time updates on AI and technology news
-- 💬 Interactive conversation about tech topics
-- 📱 Easy-to-use interface
-- 🔄 Customizable news preferences
+- 🔍 Search for latest AI and technology news
+- 🤖 AI-powered news summaries
+- 💬 Interactive chat interface
+- ⚙️ Easy API key configuration
+- 📱 Responsive design
 
-## How It Works
+## Prerequisites
 
-The News AI Assistant uses OpenAI's GPT-4 to:
-1. Search for the latest news about AI and technology
-2. Analyze and summarize the most relevant information
-3. Provide insights and context about the news
-4. Engage in meaningful discussions about tech topics
+- Python 3.8 or higher
+- OpenAI API key
+- pip (Python package manager)
 
-## Getting Started
+## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/artcgranja/news-ai.git
+git clone https://github.com/yourusername/news-ai.git
 cd news-ai
 ```
 
-2. Create a virtual environment and activate it:
+2. Create and activate a virtual environment:
 ```bash
+# Windows
 python -m venv venv
-source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
 ```
 
 3. Install dependencies:
@@ -37,36 +40,76 @@ source venv/bin/activate  # On Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Create a `.env` file with your OpenAI API key:
+4. Create a `.env` file in the root directory and add your OpenAI API key:
 ```
-OPENAI_API_KEY=your_api_key_here
-```
-
-5. Run the application:
-```bash
-python main.py
+OPENAI_API_KEY=your-api-key-here
 ```
 
 ## Usage
 
-Simply run the application and ask questions like:
-- "What's the latest news about AI?"
-- "Tell me about recent developments in machine learning"
-- "What are the newest breakthroughs in natural language processing?"
+1. Start the application:
+```bash
+python main.py
+```
+
+2. Open your web browser and navigate to `http://localhost:5000`
+
+3. If you haven't configured your API key yet, go to the Settings page and enter your OpenAI API key
+
+4. Start asking questions about AI and technology news!
+
+## Project Structure
+
+```
+news-ai/
+├── app/
+│   ├── __init__.py
+│   ├── routes/
+│   │   ├── __init__.py
+│   │   └── routes.py
+│   ├── forms/
+│   │   ├── __init__.py
+│   │   └── forms.py
+│   └── utils/
+│       ├── __init__.py
+│       └── openai_utils.py
+├── templates/
+│   ├── base.html
+│   ├── index.html
+│   └── setup.html
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
+├── .env
+├── main.py
+├── requirements.txt
+└── README.md
+```
+
+## API Endpoints
+
+- `GET /`: Home page with chat interface
+- `GET/POST /setup`: API key configuration page
+- `POST /search_news`: Search for news based on user query
+- `POST /ask_question`: Ask questions about specific news topics
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit issues and pull requests.
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes
+4. Commit your changes: `git commit -m 'Add some feature'`
+5. Push to the branch: `git push origin feature/your-feature-name`
+6. Submit a pull request
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Author
-
-- Arthur Granja ([@artcgranja](https://github.com/artcgranja))
-
 ## Acknowledgments
 
 - OpenAI for providing the GPT-4 API
-- The open-source community for their valuable tools and libraries 
+- Flask for the web framework
+- Bootstrap for the UI components 

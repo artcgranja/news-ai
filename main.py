@@ -1,20 +1,6 @@
-from openai import OpenAI
-import os
-from dotenv import load_dotenv
-import json
+from app import create_app
 
-load_dotenv()
+app, client = create_app()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-response = client.responses.create(
-    model="gpt-4o",
-    input="What's the latest news about AI?",
-    tools=[
-        {
-            "type": "web_search"
-        }
-    ]
-)
-
-print(json.dumps(response.output, default=lambda o: o.__dict__, indent=2))
+if __name__ == '__main__':
+    app.run(debug=True) 

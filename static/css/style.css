@@ -1,0 +1,129 @@
+/* Custom styles for News AI Assistant */
+
+body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* Card styling */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-header {
+    border-bottom: none;
+}
+
+/* Chat container styling */
+.chat-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    height: 60vh;
+    overflow-y: auto;
+}
+
+/* Message styling */
+.message {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #e3f2fd;
+    margin-left: auto;
+    border-bottom-right-radius: 0;
+}
+
+.assistant-message {
+    background-color: #f1f1f1;
+    margin-right: auto;
+    border-bottom-left-radius: 0;
+}
+
+/* Typing indicator */
+.typing-indicator {
+    display: none;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #f1f1f1;
+    border-radius: 0.25rem;
+    width: fit-content;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #6c757d;
+    border-radius: 50%;
+    margin-right: 5px;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Suggestion buttons */
+.suggestions {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.suggestion-btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s;
+}
+
+.suggestion-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+#query-form {
+    margin-top: 1rem;
+}
+
+#query-input {
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-right: none;
+}
+
+#query-form .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        height: 50vh;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
